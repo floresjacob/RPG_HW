@@ -1,6 +1,19 @@
+.page-header{
+    float: right;
+}
+
 #characters img{
     margin-top: 15px;
     width: 150px;
     height: 150px;
 
+}
+
+.panel-footer{
+    width: 150px;
+    text-align: center;
+}
+
+.fader{
+    opacity: 0.4;
 }
