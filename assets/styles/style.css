@@ -17,3 +17,15 @@
 .fader{
     opacity: 0.4;
 }
+
+
+
+#hero_fight img, #enemy_fight img{ 
+    margin-top: 15px;
+    width: 150px;
+    height: 150px;
+}
+
+h6, #hp {
+    display: inline;
+}
