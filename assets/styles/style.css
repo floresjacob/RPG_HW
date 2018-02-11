@@ -11,14 +11,18 @@
 
 .panel-footer{
     width: 150px;
-    text-align: center;
+    justify-content: center;
+
 }
 
 .fader{
     opacity: 0.4;
 }
 
-
+#stats{
+    list-style: none;
+    padding: 0%;
+}
 
 #hero_fight img, #enemy_fight img{ 
     margin-top: 15px;
