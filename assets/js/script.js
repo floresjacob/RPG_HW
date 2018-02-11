@@ -63,6 +63,7 @@ $(document).ready(function () {
 
     if (charArr.length === 0){
         alert("you win")
+        location.reload()
     }
 
   }
