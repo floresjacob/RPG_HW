@@ -6,6 +6,8 @@ $(document).ready(function () {
   var isEnemyAlive = true
   var myHeroThing
   var myEnemyThing
+  var promptHero = $("<h2>Choose a Hero</h2>")
+  var promptEnemy = $("<h2>Choose an Adversary</h2>")
   var attackButton = $("<a class='btn btn-default' role=' button + ' id='attack'>Attack</a>")
   var strengthPlus = 2
 
@@ -45,6 +47,14 @@ $(document).ready(function () {
       var charThing = $("<div class='col-md-" + num + " myChar' value = '" + i + "'><img src='" + charArr[i].image + "'/><div class='panel-footer'><ul id='stats'><li>" + charArr[i].name + "</li><li> Health: " + charArr[i].hp + "</li><li> Strength: " + charArr[i].strength + "</li><li> Counter: " + charArr[i].counter + "</li></ul></div></div>")
       $('#characters').append(charThing)
     }
+
+    if (!isHeroChosen) {
+        $(".page-header").append(promptHero)
+    } else if (isHeroChosen && !isEnemyChosen) {
+        $(".page-header").append(promptEnemy)
+    } else if (isHeroChosen && isEnemyChosen) {
+        $(".page-header").html()
+    }
   }
 
   function nextEnemy () {
@@ -83,17 +93,17 @@ $(document).ready(function () {
       console.log(chosenHero)
       $(this).addClass('fader')
       isHeroChosen = true // sets Hero choice to char clicked
-      charArr.splice($.inArray(chosenHero, charArr), 1) //remove enemy
       myHeroThing = $("<div id=" + chosenHero.name + " align='center'><img src='" + chosenHero.image + "'/><div class='panel-footer'><ul id='stats'><li>" + chosenHero.name + "</li><li> Health: " + chosenHero.hp + "</li><li> Strength: " + chosenHero.strength + "</li></ul></div></div>")
       $('#hero_fight').append(myHeroThing)
     } else if (isEnemyChosen === false && chosenHero.name !== charArr[$(this).attr('value')].name) {
       chosenEnemy = charArr[$(this).attr('value')]
-      console.log(chosenEnemy)
+      console.log(chosenEnemy.name)
       $(this).addClass('fader')
       isEnemyChosen = true // sets Enemy choice to char clicked
       myEnemyThing = $("<div id=" + chosenEnemy.name + " align='center'><img src='" + chosenEnemy.image + "'/><div class='panel-footer'><ul id='stats'><li>" + chosenEnemy.name + "</li><li> Health: " + chosenEnemy.hp + "</li><li> Strength: " + chosenEnemy.counter + "</li></ul></div></div>")
       $('#enemy_fight').html(myEnemyThing)
       $('#info').append(attackButton)
+      charArr.splice($.inArray(chosenHero, charArr), 1) //remove hero
     }
   })
 
