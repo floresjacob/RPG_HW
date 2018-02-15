@@ -48,14 +48,16 @@ $(document).ready(function () {
       $('#characters').append(charThing)
     }
 
-    if (!isHeroChosen) {
-        $(".page-header").append(promptHero)
-    } else if (isHeroChosen && !isEnemyChosen) {
-        $(".page-header").append(promptEnemy)
-    } else if (isHeroChosen && isEnemyChosen) {
-        $(".page-header").html()
-    }
-  }
+  //   while (!isHeroChosen) {
+  //       $("#choice").html(promptHero)
+  //   } 
+  //   while (isHeroChosen && !isEnemyChosen) {
+  //       $("#choice").html(promptEnemy)
+  //   }
+  //    while (isHeroChosen && isEnemyChosen) {
+  //       $("#choice").html()
+  //   }
+  // }
 
   function nextEnemy () {
     $("#info").html("")
