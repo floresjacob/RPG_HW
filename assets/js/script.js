@@ -47,17 +47,7 @@ $(document).ready(function () {
       var charThing = $("<div class='col-md-" + num + " myChar' value = '" + i + "'><img src='" + charArr[i].image + "'/><div class='panel-footer'><ul id='stats'><li>" + charArr[i].name + "</li><li> Health: " + charArr[i].hp + "</li><li> Strength: " + charArr[i].strength + "</li><li> Counter: " + charArr[i].counter + "</li></ul></div></div>")
       $('#characters').append(charThing)
     }
-
-  //   while (!isHeroChosen) {
-  //       $("#choice").html(promptHero)
-  //   } 
-  //   while (isHeroChosen && !isEnemyChosen) {
-  //       $("#choice").html(promptEnemy)
-  //   }
-  //    while (isHeroChosen && isEnemyChosen) {
-  //       $("#choice").html()
-  //   }
-  // }
+   }
 
   function nextEnemy () {
     $("#info").html("")
@@ -132,4 +122,5 @@ $(document).ready(function () {
 
 
   initGame()
+
 })
